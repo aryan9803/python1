@@ -20,5 +20,7 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Run add_numbers.py from src
+      - name: Run add_numbers.py with environment variables
         run: python src/add_numbers.py
+        env:
+          NUM1: 10
