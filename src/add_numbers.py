@@ -1,16 +1,12 @@
 
-# Python script to take two numbers as input from the user, add them, and print the result
+import os
 
-# Prompt the user to enter the first number
-num1 = float(input("Enter the first number: "))
+# Get numbers from environment variables
+num1 = float(os.getenv("NUM1", 0))
+num2 = float(os.getenv("NUM2", 0))
 
-# Prompt the user to enter the second numbers
-num2 = float(input("Enter the second number: "))
-
-# Add the two numbers
+# Add the numbers
 sum_result = num1 + num2
 
 # Print the result
 print(f"The sum of {num1} and {num2} is {sum_result}")
-
-#Lets see ata work hotay ka 
