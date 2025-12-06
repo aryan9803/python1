@@ -1,26 +1,17 @@
-
-name: Run Python Add Numbers Script
+name: Run Python Script
 
 on:
-  push:
-    branches:
-      - main
-  workflow_dispatch:
+  pull_request:
+    branches: [main]
 
 jobs:
-  run-script:
+  run:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Set up Python
-        uses: actions/setup-python@v4
+      - uses: actions/checkout@v4 # Latest version, no name needed
+      - uses: actions/setup-python@v5 # Latest version
         with:
           python-version: '3.x'
-
-      - name: Run add_numbers.py with environment variables
-        run: python src/add_numbers.py
+      - run: python src/add_numbers.py # Combines "name" and "run"
         env:
           NUM1: 10
